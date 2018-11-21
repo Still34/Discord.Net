@@ -24,7 +24,7 @@ public async Task OnCommandExecutedAsync(CommandInfo command, ICommandContext co
 }
 public async Task HandleCommandAsync(SocketMessage msg)
 {
-    var message = messageParam as SocketUserMessage;
+    var message = msg as SocketUserMessage;
     if (message == null) return;
     int argPos = 0;
     if (!(message.HasCharPrefix('!', ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos)) || message.Author.IsBot) return;
